@@ -6,6 +6,8 @@ const Route = ReactRouter.Route;
 const Nav = require('./Nav');
 import Badge from './Badge';
 import Popular from './Popular';
+import Home from './Home';
+import Battle from './Battle'
 
 
 export default class App extends React.Component {
@@ -14,6 +16,8 @@ export default class App extends React.Component {
       <Router>
         <div className='container'>
           <Nav />
+          <Route exact path='/' component={Home} />
+          <Route path='/battle' component={Battle} />
           <Route path='/popular' component={Popular} />
         </div>
 

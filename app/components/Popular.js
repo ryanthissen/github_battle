@@ -67,7 +67,6 @@ export default class Popular extends React.Component {
   }
 
   componentDidMount() {
-    console.log('mount up')
     this.updateLanguage(this.state.selectedLanguage);
   }
 

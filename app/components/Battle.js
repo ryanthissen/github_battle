@@ -120,6 +120,7 @@ export default class Battle extends React.Component {
   }
 
   render() {
+    let match = this.props.match;
     let playerOneName = this.state.playerOneName;
     let playerTwoName = this.state.playerTwoName;
     let playerOneImage = this.state.playerOneImage;
@@ -154,6 +155,16 @@ export default class Battle extends React.Component {
               onReset={this.handleReset}
               id='playerTwo'/>}
         </div>
+        {playerOneImage && playerTwoImage &&
+          <Link
+            className='button'
+            to={{
+              pathname: match.url + '/results',
+              search: '?playerOneName=' + playerOneName + '&playerTwoName=' + playerTwoName
+            }}>
+            Battle
+          </Link>
+        }
       </div>
     )
   }

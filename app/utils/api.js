@@ -5,14 +5,14 @@ const sec = "YOUR_SECRET_ID";
 const params = "?client_id=" + id + "&client_secret=" + sec;
 
 function getProfile(username) {
-  return axios.get('https://api.github.com/users/' + username + params)
+  return axios.get('https://api.github.com/users/' + username)
     .then(function (user) {
       return user.data;
     });
 }
 
 function getRepos(username) {
-  return axios.get('https://api.github.com/users' + username + '/repos' + params + '&per_page=100')
+  return axios.get('https://api.github.com/users/' + username + '/repos' + params + '&per_page=100')
 }
 
 function getStarCount(repos) {

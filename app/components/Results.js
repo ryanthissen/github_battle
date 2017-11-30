@@ -4,6 +4,7 @@ const queryString = require('query-string');
 let api = require('../utils/api');
 let Link = require('react-router-dom').Link;
 let PlayerPreview = require('./PlayerPreview');
+let Loading = require('./Loading');
 
 function Profile (props) {
   let info = props.info;
@@ -39,8 +40,8 @@ function Player (props) {
 }
 
 Player.propTypes = {
-  label: PropTypes.string.isReqiured,
-  score: PropTypes.number.isReqiured,
+  // label: PropTypes.string.isReqiured,
+  // score: PropTypes.number.isReqiured,
   profile: PropTypes.object.isRequired
 }
 export default class Results extends React.Component {
@@ -85,7 +86,7 @@ export default class Results extends React.Component {
     let loading = this.state.loading;
 
     if (loading) {
-      return <p>Loading...</p>;
+      return <Loading />;
     }
 
     if (error) {
